@@ -1,0 +1,40 @@
+en
+conf t
+
+no ip domain-lookup
+hostname SW1
+enable secret Cisco123!
+service password-encryption
+
+line console 0
+logging synchronous
+exec-timeout 0 0
+password cisco
+login
+exit
+
+line vty 0 4
+password cisco
+login
+transport input telnet
+exit
+
+banner motd #
+****************************************
+*     CCNA Enterprise Network Lab     *
+*     Authorized Access Only!          *
+****************************************
+#
+
+interface Vlan 1
+ip address 192.168.1.2 255.255.255.0
+no shutdown
+exit
+ip default-gateway 192.168.1.1
+
+
+interface GigabitEthernet0/1
+no shutdown
+exit
+
+do wr
