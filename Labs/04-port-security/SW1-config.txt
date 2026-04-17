@@ -1,0 +1,33 @@
+en 
+conf t
+
+vlan 10
+name Users
+exit
+
+interface range f0/1-3
+switchport mode access
+switchport access vlan 10
+exit
+
+interface f0/4
+switchport mode access
+switchport access vlan 10
+exit
+
+
+interface range f0/1-3
+switchport port-security maximum 1
+switchport port-security mac-address sticky
+switchport port-security violation shutdown
+switchport port-security
+exit
+
+interface f0/4
+switchport port-security maximum 1
+switchport port-security mac-address sticky
+switchport port-security violation restrict
+switchport port-security
+exit
+
+do wr
