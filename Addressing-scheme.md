@@ -16,7 +16,7 @@ This section defines the IP addressing plan for initial device management and co
 
 
 # Vlans & Trunking 
-## Lab 02: VLANs and Trunking – Addressing Scheme
+## Lab 02 - VLANs and Trunking – Addressing Scheme
 
 This section defines the IP addressing plan for VLAN segmentation and trunking configuration. Each VLAN represents a separate broadcast domain mapped to specific departments.
 
