@@ -31,6 +31,7 @@ This section defines the IP addressing plan for VLAN segmentation and trunking c
 | PC-A   | 10   | NIC       | 192.168.10.10 | 255.255.255.0    | Sales (connected to SW1) |
 | PC-B   | 20   | NIC       | 192.168.20.20 | 255.255.255.0    | Engineering (connected to SW2) |
 | PC-C   | 30   | NIC       | 192.168.30.30 | 255.255.255.0    | HR (connected to SW1) |
+| PC-D   | 10   | NIC       | 192.168.10.11 | 255.255.255.0    | Sales (connected to SW2) |
 
 ---
 
