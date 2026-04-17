@@ -22,6 +22,7 @@ exit
 
 interface g0/2
 switchport mode trunk
+switchport trunk allowed vlan 10,20,30,99
 exit
 
 interface Vlan 99

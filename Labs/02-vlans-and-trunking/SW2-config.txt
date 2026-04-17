@@ -23,6 +23,7 @@ switchport access vlan 10
 exit
 
 interface GigabitEthernet0/1
+switchport trunk allowed vlan 10,20,30,99
 switchport mode trunk
 exit
 
