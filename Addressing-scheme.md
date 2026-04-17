@@ -53,7 +53,7 @@ This section defines the IP addressing plan for inter-VLAN routing using a route
 | SW1    | 99   | VLAN 99       | 192.168.99.1  | 255.255.255.0    | 192.168.99.1  | Switch management |
 | SW2    | 99   | VLAN 99       | 192.168.99.2  | 255.255.255.0    | 192.168.99.1  | Switch management |
 | PC-A   | 10   | NIC           | 192.168.10.10 | 255.255.255.0    | 192.168.10.1  | Sales (SW1) |
-| PC-D   | 10   | NIC           | 192.168.10.20 | 255.255.255.0    | 192.168.10.1  | Sales (SW2) |
+| PC-D   | 10   | NIC           | 192.168.10.11 | 255.255.255.0    | 192.168.10.1  | Sales (SW2) |
 | PC-B   | 20   | NIC           | 192.168.20.20 | 255.255.255.0    | 192.168.20.1  | Engineering |
 | PC-C   | 30   | NIC           | 192.168.30.30 | 255.255.255.0    | 192.168.30.1  | HR |
 
