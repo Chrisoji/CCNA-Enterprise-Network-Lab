@@ -15,6 +15,7 @@ This section defines the IP addressing plan for initial device management and co
 
 ---
 
+
 # Vlans & Trunking 
 ## Lab 02 - VLANs and Trunking – Addressing Scheme
 
@@ -58,4 +59,35 @@ This section defines the IP addressing plan for inter-VLAN routing using a route
 | PC-C   | 30   | NIC           | 192.168.30.30 | 255.255.255.0    | 192.168.30.1  | HR |
 
 ---
+
+# Port Security
+## Lab 04: Port Security – Addressing Scheme
+
+This section defines the IP addressing plan for demonstrating port security on a Layer 2 switch. All devices are placed in the same VLAN to focus on access control rather than routing.
+
+---
+
+## End Devices
+
+| Device       | VLAN | Interface | IP Address     | Subnet Mask       | Default Gateway | Purpose |
+|-------------|------|-----------|---------------|------------------|----------------|---------|
+| PC-A        | 10   | NIC       | 192.168.10.10 | 255.255.255.0    | N/A            | Legitimate user |
+| PC-B        | 10   | NIC       | 192.168.10.20 | 255.255.255.0    | N/A            | Legitimate user |
+| PC-C        | 10   | NIC       | 192.168.10.30 | 255.255.255.0    | N/A            | Legitimate user |
+| PC-Attacker | 10   | NIC       | 192.168.10.99 | 255.255.255.0    | N/A            | Unauthorized device |
+
+
+## Switch Ports
+
+| Switch | Interface | Connected Device |
+|--------|-----------|------------------|
+| SW1    | F0/1      | PC-A             |
+| SW1    | F0/2      | PC-B             |
+| SW1    | F0/3      | PC-C             |
+| SW1    | F0/4      | PC-Attacker      |
+
+---
+
+
+
 
