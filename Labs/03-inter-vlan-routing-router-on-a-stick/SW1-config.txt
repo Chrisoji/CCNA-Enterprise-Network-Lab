@@ -1,0 +1,17 @@
+en
+conf t
+
+interface f0/1
+switchport mode trunk
+exit
+
+interface Vlan 99
+ip address 192.168.99.1 255.255.255.0
+no shutdown
+exit
+
+ip default-gateway 192.168.99.1
+
+exit
+do wr
+
