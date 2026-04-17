@@ -3,7 +3,7 @@
 ## Overview
 This lab covers the essential first step in building any enterprise network: **basic initial configuration** on Cisco routers and switches.
 
-These foundational configurations include hostnames, security settings, management IPs, and remote access setup. This provides the base for all subsequent labs in this repository.
+These foundational configurations include hostnames, security settings, management IPs, and remote access setup. This provides the base for all network device configurations.
 
 ---
 
