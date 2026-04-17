@@ -1,8 +1,14 @@
 en
 conf t
 
-interface f0/1
+interface f0/2
 switchport mode trunk
+switchport trunk allowed vlan 10,20,30,99
+exit
+
+int f0/1
+switchport mode access 
+switchport access vlan 30
 exit
 
 interface Vlan 99
