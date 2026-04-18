@@ -150,7 +150,6 @@ All devices are placed in a single VLAN to focus on link aggregation, redundancy
 |------|-----------|------------------|-----------------|--------------------------------|
 | 10   | Users     | 192.168.10.0/24  | N/A             | End-user devices and testing   |
 
----
 
 ## End Devices
 
