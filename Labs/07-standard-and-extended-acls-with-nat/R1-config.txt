@@ -32,6 +32,8 @@ access-list 10 permit 192.168.10.0 0.0.0.255
 access-list 101 remark Extended ACL for NAT and traffic control
 access-list 101 permit ip 192.168.10.0 0.0.0.255 any
 access-list 101 permit ip 192.168.20.0 0.0.0.255 any
+access-list 101 permit icmp any any echo-reply
+access-list 101 permit icmp any any unreachable
 access-list 101 deny ip any any
 
 
