@@ -89,5 +89,59 @@ This section defines the IP addressing plan for demonstrating port security on a
 ---
 
 
+# DHCP Configuration (Server and Relay)
+## Lab 05: DHCP Configuration – Addressing Scheme
+
+This section defines the IP addressing and DHCP allocation plan for dynamic host configuration across multiple VLANs.  
+Router R1 functions as both the **default gateway** and **DHCP server** using a router-on-a-stick design.
+
+---
+
+## VLAN and Subnet Plan
+
+| VLAN | VLAN Name   | Subnet            | Default Gateway | DHCP Pool Range                | Excluded Addresses          |
+|------|-------------|------------------|-----------------|-------------------------------|-----------------------------|
+| 10   | Sales       | 192.168.10.0/24  | 192.168.10.1    | 192.168.10.10 – 192.168.10.254 | 192.168.10.1 – 192.168.10.5 |
+| 20   | Engineering | 192.168.20.0/24  | 192.168.20.1    | 192.168.20.10 – 192.168.20.254 | 192.168.20.1 – 192.168.20.5 |
+| 30   | HR          | 192.168.30.0/24  | 192.168.30.1    | 192.168.30.10 – 192.168.30.254 | 192.168.30.1 – 192.168.30.5 |
+| 99   | Management  | 192.168.99.0/24  | 192.168.99.1    | N/A                           | N/A                         |
+
+---
+
+## Router (R1) Subinterfaces
+
+| Interface              | VLAN | IP Address      | Subnet Mask     | Purpose                         |
+|------------------------|------|-----------------|-----------------|---------------------------------|
+| G0/0/0.10              | 10   | 192.168.10.1    | 255.255.255.0   | Gateway + DHCP Server           |
+| G0/0/0.20              | 20   | 192.168.20.1    | 255.255.255.0   | Gateway + DHCP Server           |
+| G0/0/0.30              | 30   | 192.168.30.1    | 255.255.255.0   | Gateway + DHCP Server           |
+
+---
+
+## Switch Management Interfaces
+
+| Device | VLAN | Interface | IP Address     | Subnet Mask       | Default Gateway |
+|--------|------|-----------|---------------|------------------|----------------|
+| SW1    | 99   | VLAN 99   | 192.168.99.1  | 255.255.255.0    | 192.168.99.1   |
+| SW2    | 99   | VLAN 99   | 192.168.99.2  | 255.255.255.0    | 192.168.99.1   |
+
+---
+
+## End Devices (DHCP Clients)
+
+| Device | VLAN | Interface | IP Assignment | Default Gateway |
+|--------|------|-----------|---------------|----------------|
+| PC-A   | 10   | NIC       | DHCP          | 192.168.10.1   |
+| PC-D   | 10   | NIC       | DHCP          | 192.168.10.1   |
+| PC-B   | 20   | NIC       | DHCP          | 192.168.20.1   |
+| PC-C   | 30   | NIC       | DHCP          | 192.168.30.1   |
+
+---
+
+
+
+
+
+
 
 
