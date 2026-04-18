@@ -136,9 +136,28 @@ Router R1 functions as both the **default gateway** and **DHCP server** using a 
 ---
 
 
+# Etherchannel
+## Lab 06: EtherChannel (Layer 2 with LACP) – Addressing Scheme
 
+This section defines the IP addressing plan for demonstrating Layer 2 EtherChannel between switches using LACP.  
+All devices are placed in a single VLAN to focus on link aggregation, redundancy, and load balancing.
 
+---
 
+## VLAN and Subnet Plan
 
+| VLAN | VLAN Name | Subnet            | Default Gateway | Purpose                        |
+|------|-----------|------------------|-----------------|--------------------------------|
+| 10   | Users     | 192.168.10.0/24  | N/A             | End-user devices and testing   |
 
+---
+
+## End Devices
+
+| Device | VLAN | Interface | IP Address     | Subnet Mask       | Default Gateway | Purpose              |
+|--------|------|-----------|---------------|------------------|----------------|----------------------|
+| PC-A   | 10   | NIC       | 192.168.10.10 | 255.255.255.0    | N/A            | Connected to SW1     |
+| PC-B   | 10   | NIC       | 192.168.10.20 | 255.255.255.0    | N/A            | Connected to SW2     |
+
+---
 
