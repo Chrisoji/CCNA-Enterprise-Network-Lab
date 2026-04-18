@@ -106,7 +106,6 @@ Router R1 functions as both the **default gateway** and **DHCP server** using a 
 | 30   | HR          | 192.168.30.0/24  | 192.168.30.1    | 192.168.30.10 – 192.168.30.254 | 192.168.30.1 – 192.168.30.5 |
 | 99   | Management  | 192.168.99.0/24  | 192.168.99.1    | N/A                           | N/A                         |
 
----
 
 ## Router (R1) Subinterfaces
 
@@ -116,7 +115,6 @@ Router R1 functions as both the **default gateway** and **DHCP server** using a 
 | G0/0/0.20              | 20   | 192.168.20.1    | 255.255.255.0   | Gateway + DHCP Server           |
 | G0/0/0.30              | 30   | 192.168.30.1    | 255.255.255.0   | Gateway + DHCP Server           |
 
----
 
 ## Switch Management Interfaces
 
@@ -125,7 +123,6 @@ Router R1 functions as both the **default gateway** and **DHCP server** using a 
 | SW1    | 99   | VLAN 99   | 192.168.99.1  | 255.255.255.0    | 192.168.99.1   |
 | SW2    | 99   | VLAN 99   | 192.168.99.2  | 255.255.255.0    | 192.168.99.1   |
 
----
 
 ## End Devices (DHCP Clients)
 
