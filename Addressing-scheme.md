@@ -198,7 +198,7 @@ Router R1 acts as the default gateway for internal VLANs and translates private 
 
 | Device        | Interface | IP Address     | Subnet Mask       | Purpose                      |
 |---------------|-----------|---------------|------------------|------------------------------|
-| Cloud/Server  | Ethernet6 | 203.0.113.10  | 255.255.255.240  | External web/server endpoint |
+| Server-PT  | NIC       | 203.0.113.10  | 255.255.255.240  | Outside Server (Web/FTP simulation)       |
 
 
 ## NAT Configuration Summary
@@ -209,12 +209,7 @@ Router R1 acts as the default gateway for internal VLANs and translates private 
 | Inside Global   | 203.0.113.1 (PAT overload) |
 | Outside Global  | 203.0.113.10 |
 
-
-## Switch Management (Optional)
-
-| Device | VLAN | Interface | IP Address     | Subnet Mask       | Default Gateway |
-|--------|------|-----------|---------------|------------------|----------------|
-| SW1    | 99   | VLAN 99   | 192.168.99.1  | 255.255.255.0    | N/A            |
+---
 
 ---
 
