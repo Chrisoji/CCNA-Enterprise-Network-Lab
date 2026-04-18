@@ -1,0 +1,47 @@
+conf t
+
+int g0/0/0
+no shutdown
+exit
+
+interface GigabitEthernet0/0/0.10
+encapsulation dot1Q 10
+ip address 192.168.10.1 255.255.255.0
+ip nat inside
+no shutdown
+exit
+
+interface GigabitEthernet0/0/0.20
+encapsulation dot1Q 20
+ip address 192.168.20.1 255.255.255.0
+ip nat inside
+no shutdown
+exit
+
+interface GigabitEthernet0/0/1
+ip address 203.0.113.1 255.255.255.240
+ip nat outside
+no shutdown
+exit
+
+ip nat inside source list 101 interface GigabitEthernet0/0/1 overload
+
+access-list 10 remark Standard ACL - Allow Sales VLAN
+access-list 10 permit 192.168.10.0 0.0.0.255
+
+access-list 101 remark Extended ACL for NAT and traffic control
+access-list 101 permit ip 192.168.10.0 0.0.0.255 any
+access-list 101 permit ip 192.168.20.0 0.0.0.255 any
+access-list 101 deny ip any any
+
+
+interface GigabitEthernet0/0/0.10
+ip access-group 10 out
+exit
+
+interface GigabitEthernet0/0/1
+ip access-group 101 in
+exit
+
+
+do wr
