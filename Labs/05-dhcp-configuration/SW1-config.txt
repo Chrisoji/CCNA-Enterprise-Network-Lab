@@ -1,0 +1,3 @@
+interface FastEthernet0/2
+switchport mode trunk
+exit
