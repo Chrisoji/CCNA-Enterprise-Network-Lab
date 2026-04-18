@@ -1,0 +1,26 @@
+en
+conf t
+
+
+vlan 10
+name Users
+exit
+
+
+interface f0/3
+switchport mode access
+switchport access vlan 10
+exit
+
+
+interface range f0/1-2 
+channel-group 1 mode active
+exit
+
+
+interface Port-channel 1
+switchport mode access
+switchport access vlan 10
+exit
+
+do wr
