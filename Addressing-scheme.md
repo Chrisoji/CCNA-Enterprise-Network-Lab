@@ -71,10 +71,10 @@ This section defines the IP addressing plan for demonstrating port security on a
 
 | Device       | VLAN | Interface | IP Address     | Subnet Mask       | Default Gateway | Purpose |
 |-------------|------|-----------|---------------|------------------|----------------|---------|
-| PC-A        | 10   | NIC       | 192.168.10.10 | 255.255.255.0    | N/A            | Legitimate user |
+| PC-A        | 10   | NIC       | 192.168.10.10 | 255.255.255.0    | N/A            | Test device |
 | PC-B        | 10   | NIC       | 192.168.10.20 | 255.255.255.0    | N/A            | Legitimate user |
 | PC-C        | 10   | NIC       | 192.168.10.30 | 255.255.255.0    | N/A            | Legitimate user |
-| PC-Attacker | 10   | NIC       | 192.168.10.99 | 255.255.255.0    | N/A            | Unauthorized device |
+| PC-Attacker | 10   | NIC       | 192.168.10.99 | 255.255.255.0    | N/A            | Test device |
 
 
 ## Switch Ports
