@@ -175,6 +175,7 @@ Router R1 acts as the default gateway for internal VLANs and translates private 
 |------|-------------|------------------|-----------------|
 | 10   | Sales       | 192.168.10.0/24  | 192.168.10.1    |
 | 20   | Engineering | 192.168.20.0/24  | 192.168.20.1    |
+| 30   | Testdevice | 192.168.30.0/24  | 192.168.30.1    |
 
 
 ## Inside Network (End Devices)
@@ -183,6 +184,7 @@ Router R1 acts as the default gateway for internal VLANs and translates private 
 |--------|------|-----------|---------------|------------------|----------------|------------------|
 | PC1    | 10   | NIC       | 192.168.10.10 | 255.255.255.0    | 192.168.10.1   | Sales PC         |
 | PC2    | 20   | NIC       | 192.168.20.20 | 255.255.255.0    | 192.168.20.1   | Engineering PC   |
+| PC2    | 30   | NIC       | 192.168.30.30 | 255.255.255.0    | 192.168.30.1   | Testdevice PC   |
 
 
 ## Router (R1) Interfaces
@@ -191,6 +193,7 @@ Router R1 acts as the default gateway for internal VLANs and translates private 
 |---------------|------|---------------|------------------|-------------------------------|
 | G0/0/0.10     | 10   | 192.168.10.1  | 255.255.255.0    | Inside (Gateway VLAN 10)      |
 | G0/0/0.20     | 20   | 192.168.20.1  | 255.255.255.0    | Inside (Gateway VLAN 20)      |
+| G0/0/0.30     | 30   | 192.168.30.1  | 255.255.255.0    | Inside (Gateway VLAN 30)      |
 | G0/0/1        | N/A  | 203.0.113.1   | 255.255.255.240  | Outside (Public/NAT interface)|
 
 
@@ -211,5 +214,4 @@ Router R1 acts as the default gateway for internal VLANs and translates private 
 
 ---
 
----
 
