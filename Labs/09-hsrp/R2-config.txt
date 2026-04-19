@@ -1,6 +1,6 @@
 conf t
 
-ip route 0.0.0.0 0.0.0.0 203.0.113.1
+ip route 0.0.0.0 0.0.0.0 203.0.113.5
 
 interface GigabitEthernet0/0
 no shutdown
