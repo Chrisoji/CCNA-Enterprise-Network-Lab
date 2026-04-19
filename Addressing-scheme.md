@@ -286,6 +286,7 @@ One Layer 2 switch connects two PCs in different VLANs. The switch is connected 
 | ISP    | G0/0      | 203.0.113.1   | 255.255.255.252  | Toward R1            |
 | R2     | G0/1      | 203.0.113.6   | 255.255.255.252  | Link to ISP          |
 | ISP    | G0/1      | 203.0.113.5   | 255.255.255.252  | Toward R2            |
+| ISP    | G0/2      | 200.10.10.10  | 255.255.255.0    | outside test ping int|
 
 
 ## HSRP Configuration Summary
