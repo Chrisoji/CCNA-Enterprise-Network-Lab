@@ -1,0 +1,31 @@
+conf t
+
+vlan 10
+name Sales
+exit
+vlan 20
+name Engineering
+exit
+
+
+interface g0/1
+switchport mode trunk
+exit
+
+interface g0/2
+switchport mode trunk
+exit
+
+
+interface FastEthernet0/1
+switchport mode access
+switchport access vlan 10
+exit
+
+interface FastEthernet0/2
+switchport mode access
+switchport access vlan 20
+exit
+
+
+do wr
