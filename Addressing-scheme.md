@@ -215,3 +215,31 @@ Router R1 acts as the default gateway for internal VLANs and translates private 
 ---
 
 
+# Static ipv4 & ipv6 routing + OSPF
+## Lab 08: Static Routing (IPv4 & IPv6) + OSPFv2 – Addressing Scheme
+
+This section defines the IPv4 and IPv6 addressing plan for routing between two routers (R1 and R2).  
+The lab demonstrates static routing and dynamic routing using OSPFv2.
+
+---
+
+## IPv4 Addressing
+
+| Device | Interface   | IP Address     | Subnet Mask       | Purpose                     |
+|--------|-------------|---------------|------------------|-----------------------------|
+| R1     | G0/0/0      | 10.12.12.1    | 255.255.255.0    | Link to R2                  |
+| R1     | Loopback0   | 172.16.1.1    | 255.255.255.0    | Simulated local network     |
+| R2     | G0/0/0      | 10.12.12.2    | 255.255.255.0    | Link to R1                  |
+| R2     | Loopback0   | 172.16.2.1    | 255.255.255.0    | Simulated remote network    |
+
+
+## IPv6 Addressing
+
+| Device | Interface   | IPv6 Address        | Prefix Length | Purpose                    |
+|--------|-------------|--------------------|---------------|----------------------------|
+| R1     | G0/0/0      | 2001:db8:12::1     | /64           | Link to R2                 |
+| R2     | G0/0/0      | 2001:db8:12::2     | /64           | Link to R1                 |
+| R2     | Loopback0   | 2001:db8:aaaa::1   | /64           | Simulated remote network   |
+
+---
+
