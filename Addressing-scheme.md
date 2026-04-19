@@ -243,3 +243,57 @@ The lab demonstrates static routing and dynamic routing using OSPFv2.
 
 ---
 
+
+# HSRP
+## Lab 09: HSRP (Hot Standby Router Protocol) – Addressing Scheme
+
+This section defines the IP addressing plan for gateway redundancy using HSRP.  
+One Layer 2 switch connects two PCs in different VLANs. The switch is connected to two routers (R1 and R2) that provide redundant default gateways. R1 and R2 are also connected to an ISP router for external connectivity. HSRP ensures that if the active router fails, the standby router automatically takes over.
+
+---
+
+## VLAN and Subnet Plan
+
+| VLAN | VLAN Name   | Subnet            | HSRP Virtual IP | Purpose                     |
+|------|-------------|------------------|-----------------|-----------------------------|
+| 10   | Sales       | 192.168.10.0/24  | 192.168.10.1    | Default gateway for PC1     |
+| 20   | Engineering | 192.168.20.0/24  | 192.168.20.1    | Default gateway for PC2     |
+
+
+## End Devices
+
+| Device | VLAN | Interface | IP Address     | Subnet Mask       | Default Gateway | Purpose        |
+|--------|------|-----------|---------------|------------------|----------------|----------------|
+| PC1    | 10   | NIC       | 192.168.10.10 | 255.255.255.0    | 192.168.10.1   | Sales          |
+| PC2    | 20   | NIC       | 192.168.20.20 | 255.255.255.0    | 192.168.20.1   | Engineering    |
+
+
+## Router Interfaces (HSRP)
+
+| Device | Interface | VLAN | IP Address     | Subnet Mask       | Role                  |
+|--------|-----------|------|---------------|------------------|-----------------------|
+| R1     | G0/0.10   | 10   | 192.168.10.2  | 255.255.255.0    | HSRP Active           |
+| R1     | G0/0.20   | 20   | 192.168.20.2  | 255.255.255.0    | HSRP Active           |
+| R2     | G0/0.10   | 10   | 192.168.10.3  | 255.255.255.0    | HSRP Standby          |
+| R2     | G0/0.20   | 20   | 192.168.20.3  | 255.255.255.0    | HSRP Standby          |
+
+
+## WAN / ISP Connectivity
+
+| Device | Interface | IP Address     | Subnet Mask       | Purpose              |
+|--------|-----------|---------------|------------------|----------------------|
+| R1     | G0/1      | 203.0.113.2   | 255.255.255.252  | Link to ISP          |
+| ISP    | G0/0      | 203.0.113.1   | 255.255.255.252  | Toward R1            |
+| R2     | G0/1      | 203.0.113.6   | 255.255.255.252  | Link to ISP          |
+| ISP    | G0/1      | 203.0.113.5   | 255.255.255.252  | Toward R2            |
+
+
+## HSRP Configuration Summary
+
+| VLAN | HSRP Group | Virtual IP     | Active Router | Standby Router |
+|------|------------|----------------|---------------|----------------|
+| 10   | 10         | 192.168.10.1   | R1            | R2             |
+| 20   | 20         | 192.168.20.1   | R1            | R2             |
+
+---
+
