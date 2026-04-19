@@ -6,6 +6,9 @@ exit
 vlan 20
 name Engineering
 exit
+vlan 30
+name testdevice
+exit
 
 
 interface FastEthernet0/1
@@ -20,6 +23,11 @@ exit
 interface FastEthernet0/3
 switchport mode access
 switchport access vlan 20
+exit
+
+interface FastEthernet0/4
+switchport mode access
+switchport access vlan 30
 exit
 
 do wr
